@@ -1,0 +1,27 @@
+{
+  "name": "cheaoc",
+  "version": "1.0.0",
+  "description": "Che AOC",
+  "main": "index.js",
+  "keywords": [
+    "aoc",
+    "advent of code",
+    "2021"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bokjo/cheaoc.git"
+  },
+  "author": "Bojanche Stojchevski",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bokjo/cheaoc/issues"
+  },
+  "homepage": "https://github.com/bokjo/cheaoc#readme",
+  "devDependencies": {
+    "@types/node": "^16.11.12"
+  }
+}
