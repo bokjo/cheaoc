@@ -16,20 +16,23 @@ async function solutionFn1(data: number[]): Promise<number> {
   for (let index = 0; index < data.length; index++) {
     if (!Number.isNaN(data[index])) {
       maxCurrent += data[index];
-    } else if (Number.isNaN(data[index])) {
+
+      if (index == data.length - 1) {
+        perElf.push(maxCurrent);
+      }
+    } else if (Number.isNaN(data[index]) || index == data.length - 1) {
       perElf.push(maxCurrent);
       maxCurrent = 0; // reset, next elf...
     }
-
-    if (maxCurrent > max) {
-      max = maxCurrent;
-    }
   }
+  // console.log(perElf);
+  perElf.sort((a, b) => b - a);
+  // console.log(perElf);
 
-  return max;
+  return perElf.slice(0, 3).reduce((acc, curr) => acc + curr, 0);
 }
 
-async function p1() {
+async function p2() {
   // Test data
   const testData = await readFileLines("./test-data.txt");
   const testDataParsed = testData.map((depth) => parseInt(depth, 10));
@@ -56,5 +59,5 @@ async function p1() {
 }
 
 (async () => {
-  await p1();
+  await p2();
 })();
