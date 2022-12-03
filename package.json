@@ -13,7 +13,9 @@
     "2021:day1:part1": "cd ./2021/day01/ && ts-node part1",
     "2021:day1:part2": "cd ./2021/day01/ && ts-node part2",
     "2022:01:p1": "cd ./2022/01/ && ts-node p1",
-    "2022:01:p2": "cd ./2022/01/ && ts-node p2"
+    "2022:01:p2": "cd ./2022/01/ && ts-node p2",
+    "2022:02:p1": "cd ./2022/02/ && ts-node p1",
+    "2022:02:p2": "cd ./2022/02/ && ts-node p2"
   },
   "repository": {
     "type": "git",
