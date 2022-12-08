@@ -10,16 +10,16 @@
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "2021:day1:part1": "cd ./2021/day01/ && ts-node part1",
-    "2021:day1:part2": "cd ./2021/day01/ && ts-node part2",
-    "2022:01:p1": "cd ./2022/01/ && ts-node p1",
-    "2022:01:p2": "cd ./2022/01/ && ts-node p2",
-    "2022:02:p1": "cd ./2022/02/ && ts-node p1",
-    "2022:02:p2": "cd ./2022/02/ && ts-node p2",
-    "2022:03:p1": "cd ./2022/03/ && ts-node p1",
-    "2022:03:p2": "cd ./2022/03/ && ts-node p2",
-    "2022:04:p1": "cd ./2022/04/ && ts-node p1",
-    "2022:04:p2": "cd ./2022/04/ && ts-node p2"
+    "2022:p1:01": "cd ./2022/01/ && ts-node p1",
+    "2022:p2:01": "cd ./2022/01/ && ts-node p2",
+    "2022:p1:02": "cd ./2022/02/ && ts-node p1",
+    "2022:p2:02": "cd ./2022/02/ && ts-node p2",
+    "2022:p1:03": "cd ./2022/03/ && ts-node p1",
+    "2022:p2:03": "cd ./2022/03/ && ts-node p2",
+    "2022:p1:04": "cd ./2022/04/ && ts-node p1",
+    "2022:p2:04": "cd ./2022/04/ && ts-node p2",
+    "2022:p1:05": "cd ./2022/05/ && ts-node p1",
+    "2022:p2:05": "cd ./2022/05/ && ts-node p2"
   },
   "repository": {
     "type": "git",
