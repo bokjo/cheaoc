@@ -1,0 +1,880 @@
+
+> cheaoc@1.0.0 2022:p1:07
+> cd ./2022/07/ && ts-node p1
+
+##### TEST DATA #####
+[
+  [ '$', 'cd', '/' ],     [ '$', 'ls' ],
+  [ 'dir', 'a' ],         [ '14848514', 'b.txt' ],
+  [ '8504156', 'c.dat' ], [ 'dir', 'd' ],
+  [ '$', 'cd', 'a' ],     [ '$', 'ls' ],
+  [ 'dir', 'e' ],         [ '29116', 'f' ],
+  [ '2557', 'g' ],        [ '62596', 'h.lst' ],
+  [ '$', 'cd', 'e' ],     [ '$', 'ls' ],
+  [ '584', 'i' ],         [ '$', 'cd', '..' ],
+  [ '$', 'cd', '..' ],    [ '$', 'cd', 'd' ],
+  [ '$', 'ls' ],          [ '4060174', 'j' ],
+  [ '8033020', 'd.log' ], [ '5626152', 'd.ext' ],
+  [ '7214296', 'k' ]
+]
+##### END OF TEST DATA #####
+
+##################################################
+{
+  '/': {
+    dirs: [ 'a', 'd' ],
+    files: [ 'b.txt', 'c.dat' ],
+    sizeFiles: 23352670,
+    sizeTotal: 48380581
+  },
+  a: {
+    dirs: [ 'e' ],
+    files: [ 'f', 'g', 'h.lst' ],
+    sizeFiles: 94269,
+    sizeTotal: 94853
+  },
+  e: { dirs: [], files: [ 'i' ], sizeFiles: 584, sizeTotal: 584 },
+  d: {
+    dirs: [],
+    files: [ 'j', 'd.log', 'd.ext', 'k' ],
+    sizeFiles: 24933642,
+    sizeTotal: 24933642
+  }
+}
+##################################################
+##### Day 1 - part 1 test result #####
+Result:  95437
+##### END OF Day 1 - part 1 test solution #####
+
+Start time: 1007.0355
+End time: 1008.6420
+Took: 1.606 ms
+
+##################################################
+{
+  '/': {
+    dirs: [ 'jmdf', 'jrgzmphz', 'pdzrzbtf', 'qlpvwf' ],
+    files: [ 'dwdllt', 'pvlvsfjw.qvw', 'qvrwp.vsv', 'wzbtj' ],
+    sizeFiles: 396965,
+    sizeTotal: 4388511
+  },
+  jmdf: {
+    dirs: [ 'rgrcs' ],
+    files: [ 'gdbv.qjv', 'pphmpmms.rrn' ],
+    sizeFiles: 481272,
+    sizeTotal: 782255
+  },
+  rgrcs: {
+    dirs: [ 'drg', 'gcfth' ],
+    files: [ 'cqldc.nmr', 'phcfhh' ],
+    sizeFiles: 300983,
+    sizeTotal: 1182074
+  },
+  drg: {
+    dirs: [],
+    files: [ 'cjclf', 'phcfhh', 'twsswl.nzb', 'vmzlzqgc.ppj', 'zqbczf' ],
+    sizeFiles: 831785,
+    sizeTotal: 831785
+  },
+  gcfth: {
+    dirs: [ 'zsmhsbp' ],
+    files: [ 'bsqqhqv.thv' ],
+    sizeFiles: 49306,
+    sizeTotal: 2245983
+  },
+  zsmhsbp: {
+    dirs: [ 'gqrppn', 'glsw', 'rjngld', 'dnbg', 'rcjq', 'qlpvwf' ],
+    files: [
+      'vmcf.rsw',     'zqbczf',
+      'zsmhsbp.sdr',  'wcbmdnwq',
+      'zpsjh',        'ppbqhbv.zbn',
+      'tpd.mjv',      'ltlq',
+      'ltlq',         'twsswl.nzb',
+      'sjq.btz',      'lgcctz',
+      'msnzrtmt.hww', 'tfzqt.pgq',
+      'twsswl.nzb',   'vmzlzqgc.ppj'
+    ],
+    sizeFiles: 2196677,
+    sizeTotal: 3961910
+  },
+  jrgzmphz: {
+    dirs: [],
+    files: [ 'rtwvdwrv.jbn' ],
+    sizeFiles: 271182,
+    sizeTotal: 271182
+  },
+  pdzrzbtf: {
+    dirs: [
+      'nrnhgwgn', 'pdzrzbtf',
+      'qlpvwf',   'tfzqt',
+      'zccqrjcb', 'zrffd',
+      'mhcqp',    'mrl',
+      'nsr',      'zsmhsbp',
+      'gbs',      'pdzrzbtf',
+      'pqnvhlmq', 'rwdmdrj',
+      'zsmhsbp',  'sqhgfj'
+    ],
+    files: [
+      'bfcprq',       'ddwlgdcm',
+      'phcfhh',       'rfc.nzg',
+      'gdbv',         'lnqcd.zpt',
+      'nbspmpf',      'zsmhsbp.ddq',
+      'jvqtcpt',      'twsswl.nzb',
+      'vmzlzqgc.ppj', 'qqtgwd',
+      'hqhtpmj.shz'
+    ],
+    sizeFiles: 2057960,
+    sizeTotal: 16909957
+  },
+  nrnhgwgn: {
+    dirs: [ 'fqgbzm' ],
+    files: [ 'szps', 'zws' ],
+    sizeFiles: 349924,
+    sizeTotal: 349924
+  },
+  fqgbzm: {
+    dirs: [ 'shgwgwlh', 'sjl' ],
+    files: [],
+    sizeFiles: 0,
+    sizeTotal: 0
+  },
+  shgwgwlh: { dirs: [ 'schpcdz' ], files: [], sizeFiles: 0, sizeTotal: 102914 },
+  schpcdz: {
+    dirs: [],
+    files: [ 'mbnlh.vrb' ],
+    sizeFiles: 102914,
+    sizeTotal: 102914
+  },
+  sjl: { dirs: [ 'hvndtjs' ], files: [], sizeFiles: 0, sizeTotal: 212787 },
+  hvndtjs: { dirs: [], files: [ 'gdbv' ], sizeFiles: 212787, sizeTotal: 212787 },
+  mhcqp: {
+    dirs: [ 'gdbv', 'gvbpsjgr', 'jgdm', 'zsmhsbp' ],
+    files: [ 'npm', 'pdzrzbtf.rwr', 'twsswl.nzb' ],
+    sizeFiles: 615880,
+    sizeTotal: 4841867
+  },
+  gdbv: {
+    dirs: [ 'lqct' ],
+    files: [
+      'pdzrzbtf.lbd', 'tfzqt',
+      'fdmn.gtv',     'fjvttjp.pgb',
+      'gdbv.qhf',     'qlcqppz.pgh',
+      'ppcz.pjm',     'phcfhh',
+      'qczbv.pcc',    'zqbczf',
+      'wfcdzgfv.nml', 'zlwsfh.dnz'
+    ],
+    sizeFiles: 1636107,
+    sizeTotal: 1904815
+  },
+  gvbpsjgr: {
+    dirs: [],
+    files: [ 'vmzlzqgc.ppj' ],
+    sizeFiles: 252865,
+    sizeTotal: 252865
+  },
+  jgdm: {
+    dirs: [],
+    files: [ 'mfrtr' ],
+    sizeFiles: 140338,
+    sizeTotal: 140338
+  },
+  gqrppn: {
+    dirs: [],
+    files: [ 'gdbv.lmr' ],
+    sizeFiles: 88583,
+    sizeTotal: 88583
+  },
+  mrl: {
+    dirs: [ 'jstrsfww', 'jvmhvnw', 'nct', 'rgdjs', 'rqrh', 'wjdmf' ],
+    files: [ 'qlpvwf.wmt', 'twsswl.nzb', 'zqbczf' ],
+    sizeFiles: 230117,
+    sizeTotal: 1382037
+  },
+  jstrsfww: {
+    dirs: [ 'qfr' ],
+    files: [ 'tfzqt.fwc', 'zpsjh', 'zsmhsbp.jtq' ],
+    sizeFiles: 382133,
+    sizeTotal: 578963
+  },
+  qfr: {
+    dirs: [],
+    files: [ 'pdzrzbtf.gdd' ],
+    sizeFiles: 196830,
+    sizeTotal: 196830
+  },
+  jvmhvnw: {
+    dirs: [ 'njjnlwb' ],
+    files: [ 'tfzqt.ggg' ],
+    sizeFiles: 197634,
+    sizeTotal: 595092
+  },
+  njjnlwb: {
+    dirs: [],
+    files: [ 'gdbv.qhp', 'pmvb.tzt', 'twsswl.nzb' ],
+    sizeFiles: 397458,
+    sizeTotal: 397458
+  },
+  nct: {
+    dirs: [ 'gtg', 'jcmg', 'jqpjfdt' ],
+    files: [],
+    sizeFiles: 0,
+    sizeTotal: 986379
+  },
+  gtg: {
+    dirs: [ 'fgnnr', 'mvvvv', 'tfzqt', 'vlvgzd' ],
+    files: [ 'hbrh', 'qlpvwf.cfc', 'rfmcrmmm' ],
+    sizeFiles: 491155,
+    sizeTotal: 3922915
+  },
+  fgnnr: {
+    dirs: [],
+    files: [ 'fbhzmdh.gld', 'ztzd.bvb' ],
+    sizeFiles: 398291,
+    sizeTotal: 398291
+  },
+  mvvvv: {
+    dirs: [ 'czgn', 'mmrm', 'rsnt', 'tfzqt' ],
+    files: [],
+    sizeFiles: 0,
+    sizeTotal: 4111809
+  },
+  czgn: {
+    dirs: [ 'drsz', 'plvgpdf', 'tfzqt', 'zsmhsbp' ],
+    files: [],
+    sizeFiles: 0,
+    sizeTotal: 5300535
+  },
+  drsz: {
+    dirs: [],
+    files: [ 'vmzlzqgc.ppj' ],
+    sizeFiles: 179461,
+    sizeTotal: 179461
+  },
+  plvgpdf: {
+    dirs: [ 'mzhlg', 'pwms' ],
+    files: [ 'phcfhh', 'qlpvwf', 'thppp', 'vmzlzqgc.ppj' ],
+    sizeFiles: 523731,
+    sizeTotal: 1277223
+  },
+  mzhlg: {
+    dirs: [ 'hnpvzrc' ],
+    files: [ 'cpfjczb', 'hfjcl.zfd', 'jdcwbm' ],
+    sizeFiles: 489112,
+    sizeTotal: 598744
+  },
+  hnpvzrc: {
+    dirs: [],
+    files: [ 'ltlq', 'sfpb' ],
+    sizeFiles: 109632,
+    sizeTotal: 109632
+  },
+  pwms: {
+    dirs: [],
+    files: [ 'wbvmvd.ftq' ],
+    sizeFiles: 264380,
+    sizeTotal: 264380
+  },
+  tfzqt: {
+    dirs: [
+      'grrs',     'hdmvwhg',
+      'hhd',      'mjg',
+      'tfzqt',    'bhbzst',
+      'nllndl',   'qvzcg',
+      'rwzjjnld', 'gdbv',
+      'hmstmp',   'nssnfrs',
+      'qjsddcz',  'zsmhsbp',
+      'gjzlcfm',  'plbgr',
+      'gdbv'
+    ],
+    files: [
+      'vmzlzqgc.ppj', 'zqbczf',
+      'bdpg',         'cghrntl.bfz',
+      'glcnwwf.nsq',  'phcfhh',
+      'qnczrgp.zlq',  'qgd',
+      'nzzsfm',       'phcfhh',
+      'vwl.cgd',      'twsswl.nzb',
+      'gvfm',         'hdnvrgdl.ttm',
+      'zqbczf',       'zqbczf',
+      'cpzglzc',      'czmzqcln.jgj',
+      'qlpvwf.gvn'
+    ],
+    sizeFiles: 2400666,
+    sizeTotal: 14264055
+  },
+  grrs: {
+    dirs: [],
+    files: [ 'mjjmw.hcm' ],
+    sizeFiles: 176906,
+    sizeTotal: 176906
+  },
+  hdmvwhg: {
+    dirs: [],
+    files: [ 'clfgs.tdl', 'jctgv.lrh', 'qlpvwf.fzr', 'zqbczf' ],
+    sizeFiles: 388390,
+    sizeTotal: 388390
+  },
+  hhd: {
+    dirs: [ 'frr' ],
+    files: [ 'gdbv.fdl', 'hwhsnrch.vbb' ],
+    sizeFiles: 390362,
+    sizeTotal: 420199
+  },
+  frr: {
+    dirs: [],
+    files: [ 'qlpvwf.zhc' ],
+    sizeFiles: 29837,
+    sizeTotal: 29837
+  },
+  mjg: {
+    dirs: [ 'crrd', 'ggtrt', 'qlpvwf', 'rnqbvqsc' ],
+    files: [ 'rfsbb', 'vmzlzqgc.ppj' ],
+    sizeFiles: 428941,
+    sizeTotal: 2155511
+  },
+  crrd: {
+    dirs: [],
+    files: [ 'mhwpjh.tgs', 'qcjt', 'vsgnncd.lcf' ],
+    sizeFiles: 271414,
+    sizeTotal: 271414
+  },
+  ggtrt: { dirs: [], files: [ 'ltlq' ], sizeFiles: 68252, sizeTotal: 68252 },
+  qlpvwf: {
+    dirs: [
+      'hdphwm',   'nrcchmg',
+      'wnmrcvqd', 'mvfj',
+      'pfbzpj',   'qlpvwf',
+      'zsmhsbp',  'wsf',
+      'przn'
+    ],
+    files: [
+      'hhpvrtsj.lzj', 'gdbv.dvl',
+      'trtbg',        'lbgfh.nvb',
+      'nmjcwr',       'phcfhh',
+      'twsswl.nzb',   'vmzlzqgc.ppj',
+      'fqn',          'pdzrzbtf'
+    ],
+    sizeFiles: 1181132,
+    sizeTotal: 7038847
+  },
+  rnqbvqsc: {
+    dirs: [],
+    files: [ 'fwf.sdc' ],
+    sizeFiles: 205772,
+    sizeTotal: 205772
+  },
+  glsw: {
+    dirs: [ 'jfr' ],
+    files: [ 'mstwzph.fll', 'twsswl.nzb', 'wjd.crc' ],
+    sizeFiles: 321563,
+    sizeTotal: 520564
+  },
+  jfr: { dirs: [], files: [ 'bntt' ], sizeFiles: 199001, sizeTotal: 199001 },
+  rjngld: {
+    dirs: [],
+    files: [ 'zsmhsbp.brc' ],
+    sizeFiles: 18949,
+    sizeTotal: 18949
+  },
+  mmrm: {
+    dirs: [ 'cgvjppn' ],
+    files: [ 'lsq.qvr', 'ltlq', 'nscfrsj', 'plwgsrwp.zqb', 'ppjrdglq' ],
+    sizeFiles: 853520,
+    sizeTotal: 853520
+  },
+  cgvjppn: {
+    dirs: [ 'rhhdwdbp', 'zjstjwhw' ],
+    files: [],
+    sizeFiles: 0,
+    sizeTotal: 223383
+  },
+  rhhdwdbp: {
+    dirs: [ 'tfzqt' ],
+    files: [ 'tfzqt.fcl', 'twsswl.nzb' ],
+    sizeFiles: 223383,
+    sizeTotal: 2624049
+  },
+  zjstjwhw: {
+    dirs: [ 'bphlp', 'spvdg', 'zsmhsbp' ],
+    files: [],
+    sizeFiles: 0,
+    sizeTotal: 2532324
+  },
+  bphlp: {
+    dirs: [],
+    files: [ 'pdzrzbtf', 'zqvh.szv' ],
+    sizeFiles: 335647,
+    sizeTotal: 335647
+  },
+  spvdg: { dirs: [ 'nrndc' ], files: [], sizeFiles: 0, sizeTotal: 0 },
+  nrndc: { dirs: [ 'hjmjntd' ], files: [], sizeFiles: 0, sizeTotal: 35124 },
+  hjmjntd: { dirs: [], files: [ 'zqbczf' ], sizeFiles: 35124, sizeTotal: 35124 },
+  rsnt: {
+    dirs: [ 'pdzrzbtf', 'phnzh', 'zvhczwj' ],
+    files: [ 'ltlq', 'phcfhh', 'twsswl.nzb', 'vmzlzqgc.ppj', 'zsmhsbp' ],
+    sizeFiles: 857623,
+    sizeTotal: 3254200
+  },
+  gbs: {
+    dirs: [],
+    files: [ 'fsnfzl.fhn' ],
+    sizeFiles: 96981,
+    sizeTotal: 96981
+  },
+  pqnvhlmq: {
+    dirs: [],
+    files: [ 'ctqbvlf' ],
+    sizeFiles: 234953,
+    sizeTotal: 234953
+  },
+  rwdmdrj: {
+    dirs: [],
+    files: [ 'fmpmwj.nss' ],
+    sizeFiles: 157525,
+    sizeTotal: 157525
+  },
+  phnzh: {
+    dirs: [],
+    files: [ 'vtpfth' ],
+    sizeFiles: 251337,
+    sizeTotal: 251337
+  },
+  zvhczwj: {
+    dirs: [ 'zdblhn', 'zlcwrt' ],
+    files: [ 'zdfglcz.rns' ],
+    sizeFiles: 87280,
+    sizeTotal: 209460
+  },
+  zdblhn: {
+    dirs: [],
+    files: [ 'zpdddqm' ],
+    sizeFiles: 87731,
+    sizeTotal: 87731
+  },
+  zlcwrt: {
+    dirs: [],
+    files: [ 'cnqgjtch', 'gdbv' ],
+    sizeFiles: 34449,
+    sizeTotal: 34449
+  },
+  bhbzst: {
+    dirs: [],
+    files: [ 'fbmsb.htd', 'mmptd.mln' ],
+    sizeFiles: 267526,
+    sizeTotal: 267526
+  },
+  nllndl: {
+    dirs: [],
+    files: [ 'dsshjc.jqb', 'gdbv', 'ltlq', 'swcs.hwn' ],
+    sizeFiles: 818363,
+    sizeTotal: 818363
+  },
+  qvzcg: {
+    dirs: [],
+    files: [ 'qfhzrmfq', 'qzvsvjj.ntf', 'vmzlzqgc.ppj', 'zsmhsbp' ],
+    sizeFiles: 590157,
+    sizeTotal: 590157
+  },
+  rwzjjnld: {
+    dirs: [ 'nfhwqc' ],
+    files: [ 'mnrn.qqp', 'tvqrn' ],
+    sizeFiles: 282128,
+    sizeTotal: 282128
+  },
+  nfhwqc: { dirs: [ 'gdbv' ], files: [], sizeFiles: 0, sizeTotal: 1636107 },
+  vlvgzd: {
+    dirs: [ 'cdhlbs', 'tfzqt' ],
+    files: [ 'gjszt', 'ltlq', 'ztswzcnh' ],
+    sizeFiles: 632803,
+    sizeTotal: 3044230
+  },
+  cdhlbs: { dirs: [], files: [ 'qlpvwf' ], sizeFiles: 10761, sizeTotal: 10761 },
+  jcmg: {
+    dirs: [ 'bwg' ],
+    files: [ 'mjqh.wbl' ],
+    sizeFiles: 216164,
+    sizeTotal: 437577
+  },
+  bwg: {
+    dirs: [],
+    files: [ 'lcmj.lfp' ],
+    sizeFiles: 221413,
+    sizeTotal: 221413
+  },
+  jqpjfdt: {
+    dirs: [],
+    files: [ 'hbpfnfqg', 'tfzqt.qlw' ],
+    sizeFiles: 279060,
+    sizeTotal: 279060
+  },
+  rgdjs: {
+    dirs: [ 'gtnwrrgm', 'lvvbt', 'lwwgnsqg', 'zsmhsbp' ],
+    files: [ 'mcrrg.fms', 'ndsq.tbd', 'vmzlzqgc.ppj' ],
+    sizeFiles: 163451,
+    sizeTotal: 2552660
+  },
+  gtnwrrgm: { dirs: [], files: [ 'ltlq' ], sizeFiles: 11216, sizeTotal: 11216 },
+  lvvbt: {
+    dirs: [],
+    files: [ 'jsjgtq.vrv' ],
+    sizeFiles: 181316,
+    sizeTotal: 181316
+  },
+  lwwgnsqg: { dirs: [ 'gdbv' ], files: [], sizeFiles: 0, sizeTotal: 1636107 },
+  rqrh: {
+    dirs: [],
+    files: [ 'fscjmmw', 'hrfwh', 'nbfl.qmc', 'vmzlzqgc.ppj' ],
+    sizeFiles: 408702,
+    sizeTotal: 408702
+  },
+  wjdmf: { dirs: [ 'pvsnp' ], files: [], sizeFiles: 0, sizeTotal: 337555 },
+  pvsnp: {
+    dirs: [],
+    files: [ 'tfzqt.vht', 'vmzlzqgc.ppj' ],
+    sizeFiles: 337555,
+    sizeTotal: 337555
+  },
+  nsr: {
+    dirs: [ 'ggzlnhnn', 'qlpvwf' ],
+    files: [ 'dqhrjb', 'fpjffpb.gsp', 'gdbv.sjc', 'ltlq' ],
+    sizeFiles: 438043,
+    sizeTotal: 1966044
+  },
+  ggzlnhnn: {
+    dirs: [],
+    files: [ 'pdzrzbtf.sdp', 'vmzlzqgc.ppj' ],
+    sizeFiles: 346869,
+    sizeTotal: 346869
+  },
+  dnbg: {
+    dirs: [],
+    files: [ 'fzpnzqt' ],
+    sizeFiles: 135586,
+    sizeTotal: 135586
+  },
+  rcjq: {
+    dirs: [],
+    files: [ 'htpttdj.mjl' ],
+    sizeFiles: 19420,
+    sizeTotal: 19420
+  },
+  hdphwm: {
+    dirs: [ 'nmtf', 'swdrz' ],
+    files: [
+      'nmh.ndj',
+      'pdzrzbtf',
+      'pdzrzbtf.bcg',
+      'pdzrzbtf.hjr',
+      'twsswl.nzb'
+    ],
+    sizeFiles: 683787,
+    sizeTotal: 767129
+  },
+  nmtf: {
+    dirs: [],
+    files: [ 'fbsnvl.hmz' ],
+    sizeFiles: 72683,
+    sizeTotal: 72683
+  },
+  swdrz: {
+    dirs: [],
+    files: [ 'njghrcp.pjg' ],
+    sizeFiles: 10659,
+    sizeTotal: 10659
+  },
+  nrcchmg: {
+    dirs: [ 'gdbv', 'qtvrnsr' ],
+    files: [ 'twsswl.nzb' ],
+    sizeFiles: 133384,
+    sizeTotal: 1951445
+  },
+  qtvrnsr: {
+    dirs: [],
+    files: [ 'gnqqdlw.gvm' ],
+    sizeFiles: 181954,
+    sizeTotal: 181954
+  },
+  wnmrcvqd: {
+    dirs: [ 'gdbv' ],
+    files: [ 'ltlq', 'snvgw.dzr', 'twsswl.nzb' ],
+    sizeFiles: 509871,
+    sizeTotal: 2145978
+  },
+  lqct: { dirs: [], files: [ 'djh' ], sizeFiles: 268708, sizeTotal: 268708 },
+  hmstmp: {
+    dirs: [],
+    files: [ 'ghgzf.twb' ],
+    sizeFiles: 192327,
+    sizeTotal: 192327
+  },
+  nssnfrs: {
+    dirs: [ 'hqrwnv', 'tcwwppth' ],
+    files: [],
+    sizeFiles: 0,
+    sizeTotal: 227553
+  },
+  hqrwnv: {
+    dirs: [],
+    files: [ 'pdzrzbtf' ],
+    sizeFiles: 227553,
+    sizeTotal: 227553
+  },
+  tcwwppth: { dirs: [ 'tfzqt' ], files: [], sizeFiles: 0, sizeTotal: 2400666 },
+  qjsddcz: {
+    dirs: [ 'tfzqt' ],
+    files: [ 'ctbmrnns', 'gdbv.frh', 'zsmhsbp.lqb' ],
+    sizeFiles: 245530,
+    sizeTotal: 2646196
+  },
+  gjzlcfm: { dirs: [ 'gtbhr' ], files: [], sizeFiles: 0, sizeTotal: 0 },
+  gtbhr: { dirs: [ 'fhmf' ], files: [], sizeFiles: 0, sizeTotal: 274348 },
+  fhmf: {
+    dirs: [],
+    files: [ 'zqbczf' ],
+    sizeFiles: 274348,
+    sizeTotal: 274348
+  },
+  plbgr: {
+    dirs: [ 'gbz' ],
+    files: [ 'jprr.ssp', 'jtzzhr.pmr' ],
+    sizeFiles: 213202,
+    sizeTotal: 315192
+  },
+  gbz: {
+    dirs: [],
+    files: [ 'vmzlzqgc.ppj' ],
+    sizeFiles: 101990,
+    sizeTotal: 101990
+  },
+  zccqrjcb: {
+    dirs: [],
+    files: [ 'dhvfttmp', 'vmzlzqgc.ppj' ],
+    sizeFiles: 263230,
+    sizeTotal: 263230
+  },
+  zrffd: {
+    dirs: [ 'gfjjn', 'hzbvjc', 'rfj', 'vnvbjjj' ],
+    files: [ 'lhcqhgj.zvf', 'zqbczf' ],
+    sizeFiles: 172638,
+    sizeTotal: 1666109
+  },
+  gfjjn: {
+    dirs: [ 'djgqgfs', 'qnh' ],
+    files: [ 'gdbv.llg', 'pss.qlh', 'qlpvwf.mtt', 'twsswl.nzb' ],
+    sizeFiles: 728285,
+    sizeTotal: 1021803
+  },
+  djgqgfs: {
+    dirs: [ 'btptqg', 'pdzrzbtf' ],
+    files: [ 'gpmzsbl' ],
+    sizeFiles: 63115,
+    sizeTotal: 2303539
+  },
+  btptqg: {
+    dirs: [ 'hhhg' ],
+    files: [ 'bsj', 'zqbczf' ],
+    sizeFiles: 182464,
+    sizeTotal: 409943
+  },
+  hhhg: {
+    dirs: [],
+    files: [ 'ggjltbrt', 'phcfhh' ],
+    sizeFiles: 227479,
+    sizeTotal: 227479
+  },
+  qnh: {
+    dirs: [],
+    files: [ 'wchmf.hhr' ],
+    sizeFiles: 230403,
+    sizeTotal: 230403
+  },
+  hzbvjc: {
+    dirs: [
+      'bdp',    'gmjmdz',
+      'gtgwz',  'hthvpj',
+      'pljbqh', 'tfzqt',
+      'vzwdgw'
+    ],
+    files: [ 'vzrcph.npm' ],
+    sizeFiles: 189834,
+    sizeTotal: 3632426
+  },
+  bdp: {
+    dirs: [ 'mcbfsr' ],
+    files: [ 'vmzlzqgc.ppj' ],
+    sizeFiles: 179306,
+    sizeTotal: 211390
+  },
+  mcbfsr: {
+    dirs: [],
+    files: [ 'mbdhddbh.fgp', 'zszcw.dlq' ],
+    sizeFiles: 32084,
+    sizeTotal: 32084
+  },
+  gmjmdz: {
+    dirs: [],
+    files: [ 'hnnw.hfq' ],
+    sizeFiles: 233472,
+    sizeTotal: 233472
+  },
+  gtgwz: {
+    dirs: [ 'gdbv', 'tfzqt', 'zsmhsbp' ],
+    files: [ 'fsjp.zdv', 'gdbv.zhh', 'pbqpfbd.nhq' ],
+    sizeFiles: 254413,
+    sizeTotal: 6487863
+  },
+  hthvpj: {
+    dirs: [ 'blmdfsh' ],
+    files: [ 'gdbv', 'lsfr.ctp', 'ngjwzc.mjn' ],
+    sizeFiles: 374735,
+    sizeTotal: 507884
+  },
+  blmdfsh: {
+    dirs: [],
+    files: [ 'twsswl.nzb' ],
+    sizeFiles: 133149,
+    sizeTotal: 133149
+  },
+  pljbqh: { dirs: [ 'pdzrzbtf' ], files: [], sizeFiles: 0, sizeTotal: 2057960 },
+  vzwdgw: {
+    dirs: [ 'frvhgwf', 'gccpzbb', 'pdzrzbtf' ],
+    files: [],
+    sizeFiles: 0,
+    sizeTotal: 2657597
+  },
+  frvhgwf: {
+    dirs: [],
+    files: [ 'rmdqrrnr' ],
+    sizeFiles: 45940,
+    sizeTotal: 45940
+  },
+  gccpzbb: {
+    dirs: [],
+    files: [ 'ltlq', 'wtrrt.dzp', 'zsmhsbp.shc' ],
+    sizeFiles: 553697,
+    sizeTotal: 553697
+  },
+  sqhgfj: {
+    dirs: [],
+    files: [ 'vqm.hld' ],
+    sizeFiles: 201634,
+    sizeTotal: 201634
+  },
+  rfj: {
+    dirs: [],
+    files: [ 'gslwfb.jbt', 'ljrlngwl' ],
+    sizeFiles: 155860,
+    sizeTotal: 155860
+  },
+  vnvbjjj: {
+    dirs: [],
+    files: [ 'vmzlzqgc.ppj', 'zsmhsbp.fzb' ],
+    sizeFiles: 419492,
+    sizeTotal: 419492
+  },
+  mvfj: {
+    dirs: [ 'bwcpw', 'hdd', 'lfsdh', 'rgwhgjjw', 'tfzqt', 'wngmvdj' ],
+    files: [ 'hlmsrmr.chs', 'ltlq', 'twsswl.nzb' ],
+    sizeFiles: 519363,
+    sizeTotal: 4442285
+  },
+  bwcpw: {
+    dirs: [],
+    files: [ 'dbqcsj', 'twsswl.nzb' ],
+    sizeFiles: 207879,
+    sizeTotal: 207879
+  },
+  hdd: {
+    dirs: [ 'qlpvwf' ],
+    files: [ 'vmzlzqgc.ppj' ],
+    sizeFiles: 245624,
+    sizeTotal: 1426756
+  },
+  lfsdh: {
+    dirs: [ 'rcssg', 'zwhqftdf' ],
+    files: [ 'cwlgghr', 'hzr', 'tnhpdd.fvv', 'zqbczf' ],
+    sizeFiles: 791626,
+    sizeTotal: 1295640
+  },
+  rcssg: {
+    dirs: [],
+    files: [ 'flbbsmp.mvm' ],
+    sizeFiles: 202930,
+    sizeTotal: 202930
+  },
+  zwhqftdf: {
+    dirs: [],
+    files: [ 'jvcw.mnh', 'rvtndpd.rvn' ],
+    sizeFiles: 301084,
+    sizeTotal: 301084
+  },
+  rgwhgjjw: {
+    dirs: [ 'gzcbbzj', 'gzgbdd', 'hcplnwnh' ],
+    files: [],
+    sizeFiles: 0,
+    sizeTotal: 227466
+  },
+  gzcbbzj: { dirs: [], files: [ 'ltlq' ], sizeFiles: 192705, sizeTotal: 192705 },
+  gzgbdd: { dirs: [], files: [ 'zqbczf' ], sizeFiles: 6145, sizeTotal: 6145 },
+  hcplnwnh: { dirs: [], files: [ 'ltlq' ], sizeFiles: 28616, sizeTotal: 28616 },
+  wngmvdj: {
+    dirs: [ 'nngnhz', 'pflg' ],
+    files: [ 'bgjnfqtf' ],
+    sizeFiles: 277127,
+    sizeTotal: 277127
+  },
+  nngnhz: {
+    dirs: [ 'cgv', 'lctp', 'qjlvh' ],
+    files: [],
+    sizeFiles: 0,
+    sizeTotal: 338426
+  },
+  cgv: {
+    dirs: [ 'cdbdv', 'fzr', 'hrznddsg' ],
+    files: [],
+    sizeFiles: 0,
+    sizeTotal: 487965
+  },
+  cdbdv: {
+    dirs: [],
+    files: [ 'hghqwz.vdj' ],
+    sizeFiles: 203851,
+    sizeTotal: 203851
+  },
+  fzr: { dirs: [], files: [ 'phcfhh' ], sizeFiles: 17360, sizeTotal: 17360 },
+  hrznddsg: {
+    dirs: [],
+    files: [ 'tftmcrt' ],
+    sizeFiles: 266754,
+    sizeTotal: 266754
+  },
+  lctp: {
+    dirs: [],
+    files: [ 'nnsdtq.rls', 'vmrnr.bwv' ],
+    sizeFiles: 270923,
+    sizeTotal: 270923
+  },
+  qjlvh: { dirs: [], files: [ 'zqbczf' ], sizeFiles: 67503, sizeTotal: 67503 },
+  pflg: { dirs: [ 'qlpvwf' ], files: [], sizeFiles: 0, sizeTotal: 1181132 },
+  pfbzpj: {
+    dirs: [],
+    files: [ 'bvv.lgd', 'ltlq', 'vmzlzqgc.ppj' ],
+    sizeFiles: 386246,
+    sizeTotal: 386246
+  },
+  wsf: { dirs: [], files: [ 'phcfhh' ], sizeFiles: 79880, sizeTotal: 79880 },
+  przn: {
+    dirs: [],
+    files: [ 'npscjw.ndb' ],
+    sizeFiles: 167375,
+    sizeTotal: 167375
+  }
+}
+##################################################
+##### Day 1 - part 1 solution #####
+Result:  897297
+##### END OF Day 1 - part 1 solution #####
+
+Start time: 1011.3199
+End time: 1033.4437
+Took: 22.123 ms
+
